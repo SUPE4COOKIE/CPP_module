@@ -10,17 +10,20 @@ int main(void)
 	while (true)
 	{
 		std::cout << "Enter a command: ";
-		std::cin >> cmd;
+		getline(std::cin, cmd);
+		if (std::cin.eof())
+			return 0;
 		if (cmd == "ADD")
-			book.Add();
+		{
+			if (book.Add())
+				return 0;
+		}
 		else if (cmd == "SEARCH")
 			book.Search();
-		else if (cmd == "QUIT")
-		{
-			book.Exit();
+		else if (cmd == "EXIT")
 			break;
-		}
 		else
 			std::cout << "Invalid command" << std::endl;
 	}
+	book.Exit();
 }

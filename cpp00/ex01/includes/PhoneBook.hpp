@@ -4,7 +4,7 @@
 # include <iostream>
 # include <sstream>
 # include "Contact.hpp"
-# define CONTACT_NBR 3
+# define CONTACT_NBR 8
 
 class PhoneBook
 {
@@ -15,7 +15,7 @@ private:
 	int SearchInput(std::string message);
 	void PrintContact(int index);
 public:
-	PhoneBook(/* args */);
+	PhoneBook();
 	~PhoneBook();
 	int Add(void);
 	int Search();

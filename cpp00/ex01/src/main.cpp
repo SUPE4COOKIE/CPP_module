@@ -22,8 +22,6 @@ int main(void)
 			book.Search();
 		else if (cmd == "EXIT")
 			break;
-		else
-			std::cout << "Invalid command" << std::endl;
 	}
 	book.Exit();
 }

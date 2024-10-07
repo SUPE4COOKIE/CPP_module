@@ -1,35 +1,35 @@
-CPP = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -Iincludes -g3
-
+OBJDIR = .obj
 SRC_DIR = src
-OBJ_DIR = .obj
+OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJDIR)/%.o)
+DEPS = $(OBJS:.o=.d)
+SRCS = $(addprefix $(SRC_DIR)/, \
+	main.cpp \
+	Harl.cpp \
+)
+NAME = Harl2.0
+CXX = c++
+CXX_FLAGS = -Wall -Wextra -Werror -std=c++98
+INC = -I includes/
 
-TARGET = Harl2.0
+all: $(NAME)
 
-SOURCES = $(addprefix $(SRC_DIR)/, \
-			Harl.cpp \
-			main.cpp \
-			)
+$(NAME): $(OBJS)
+	$(CXX) $(CXX_FLAGS) $(OBJS) -o $(NAME)
 
-OBJECTS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SOURCES))
+$(OBJDIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJDIR)
+	$(CXX) $(CXX_FLAGS) $(INC) -MMD -MP -c $< -o $@
 
-all: $(TARGET)
+$(OBJDIR):
+	@mkdir -p $(OBJDIR)
 
-$(TARGET): $(OBJECTS)
-	$(CPP) $(CFLAGS) -o $@ $^
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp Makefile | $(OBJ_DIR)
-	$(CPP) $(CFLAGS) -c $< -o $@
-
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+-include $(DEPS)
 
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -rf $(TARGET)
+	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re%         

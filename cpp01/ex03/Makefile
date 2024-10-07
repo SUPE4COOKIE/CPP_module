@@ -3,13 +3,14 @@ SRC_DIR = src
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJDIR)/%.o)
 DEPS = $(OBJS:.o=.d)
 SRCS = $(addprefix $(SRC_DIR)/, \
-	Contact.cpp \
-	PhoneBook.cpp \
 	main.cpp \
+	Weapon.cpp \
+	HumanA.cpp \
+	HumanB.cpp \
 )
-NAME = PhoneBook
+NAME = UnnecessaryViolence
 CXX = c++
-CXX_FLAGS = -Wall -Wextra -Werror -std=c++98
+CXX_FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 INC = -I includes/
 
 all: $(NAME)
@@ -17,7 +18,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXX_FLAGS) $(OBJS) -o $(NAME)
 
-$(OBJDIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJDIR)
+$(OBJDIR)/%.o: $(SRC_DIR)/%.cpp Makefile | $(OBJDIR)
 	$(CXX) $(CXX_FLAGS) $(INC) -MMD -MP -c $< -o $@
 
 $(OBJDIR):

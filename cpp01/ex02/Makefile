@@ -3,11 +3,9 @@ SRC_DIR = src
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJDIR)/%.o)
 DEPS = $(OBJS:.o=.d)
 SRCS = $(addprefix $(SRC_DIR)/, \
-	Contact.cpp \
-	PhoneBook.cpp \
 	main.cpp \
 )
-NAME = PhoneBook
+NAME = ThisIsBrain
 CXX = c++
 CXX_FLAGS = -Wall -Wextra -Werror -std=c++98
 INC = -I includes/

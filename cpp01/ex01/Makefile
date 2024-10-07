@@ -3,11 +3,13 @@ SRC_DIR = src
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJDIR)/%.o)
 DEPS = $(OBJS:.o=.d)
 SRCS = $(addprefix $(SRC_DIR)/, \
-	Contact.cpp \
-	PhoneBook.cpp \
 	main.cpp \
+	newZombie.cpp \
+	randomChump.cpp \
+	Zombie.cpp \
+	zombieHorde.cpp \
 )
-NAME = PhoneBook
+NAME = Zombie
 CXX = c++
 CXX_FLAGS = -Wall -Wextra -Werror -std=c++98
 INC = -I includes/

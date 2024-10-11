@@ -1,10 +1,10 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("No Name"), _hp(10), _ep(10), _atk(0) 
+ClapTrap::ClapTrap() : _name("No Name"), _hp(100), _ep(50), _atk(20) 
 {
 	std::cout << "ClapTrap " << BLUE << this->_name << RESET << " has been created!" << std::endl;
 };
-ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _atk(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hp(100), _ep(50), _atk(20)
 {
 	std::cout << "ClapTrap " << BLUE << this->_name << RESET << " has been created!" << std::endl;
 };

@@ -1,25 +1,23 @@
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
 	ClapTrap clap("clap");
-	ScavTrap scav("scav");
-	ScavTrap copy(scav);
+	FragTrap Frag("Frag");
+	FragTrap copy(Frag);
 
-	scav.attack("copy");
+	Frag.attack("copy");
 	copy.takeDamage(5);
 	std::cout << "copy hp: " << copy.GetHp() << std::endl;
-	std::cout << "clap hp: " << clap.GetHp() << std::endl;
 	copy.beRepaired(5);
 	copy.takeDamage(5);
 	std::cout << "copy hp: " << copy.GetHp() << std::endl;
 	for (int i = 0; i < 11; i++)
 	{
-		scav.attack("copy");
-		copy.takeDamage(scav.GetAtk());
+		Frag.attack("copy");
+		copy.takeDamage(Frag.GetAtk());
 	}
-	scav.guardGate();
-	scav.guardGate();
-	copy.guardGate();
+	Frag.highFivesGuys();
+	copy.highFivesGuys();
 }

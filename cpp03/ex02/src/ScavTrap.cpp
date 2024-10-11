@@ -2,17 +2,11 @@
 
 ScavTrap::ScavTrap() : ClapTrap() 
 {
-	this->SetHp(100);
-	this->SetEp(50);
-	this->SetAtk(20);
 	std::cout << "ScavTrap " << BLUE << this->GetName() << RESET << " has been created!" << std::endl;
 };
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	this->SetHp(100);
-	this->SetEp(50);
-	this->SetAtk(20);
 	std::cout << "ScavTrap " << BLUE << this->GetName() << RESET << " has been created!" << std::endl;
 };
 

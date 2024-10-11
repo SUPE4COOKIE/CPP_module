@@ -1,10 +1,10 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("No Name"), _hp(10), _ep(10), _atk(0) 
+ClapTrap::ClapTrap() : _name("No Name"), _hp(100), _ep(50), _atk(20) 
 {
 	std::cout << "ClapTrap " << BLUE << this->_name << RESET << " has been created!" << std::endl;
 };
-ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _atk(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hp(100), _ep(50), _atk(20)
 {
 	std::cout << "ClapTrap " << BLUE << this->_name << RESET << " has been created!" << std::endl;
 };
@@ -19,6 +19,11 @@ std::string ClapTrap::GetName() const {return this->_name;};
 unsigned int ClapTrap::GetHp() const {return this->_hp;};
 unsigned int ClapTrap::GetEp() const {return this->_ep;};
 unsigned int ClapTrap::GetAtk() const {return this->_atk;};
+
+void ClapTrap::SetName(std::string name) {this->_name = name;};
+void ClapTrap::SetHp(unsigned int hp) {this->_hp = hp;};
+void ClapTrap::SetEp(unsigned int ep) {this->_ep = ep;};
+void ClapTrap::SetAtk(unsigned int atk) {this->_atk = atk;};
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &ref)
 {

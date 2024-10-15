@@ -24,6 +24,16 @@ ScavTrap::ScavTrap(const ScavTrap &ref)
 
 ScavTrap::~ScavTrap() {std::cout << "ScavTrap " << BLUE << this->GetName() << RED << " has been destroyed!" << RESET <<std::endl;};
 
+ScavTrap &ScavTrap::operator=(const ScavTrap &ref)
+{
+	this->SetName(ref.GetName());
+	this->SetHp(ref.GetHp());
+	this->SetEp(ref.GetEp());
+	this->SetAtk(ref.GetAtk());
+	this->_is_guarding = ref._is_guarding;
+	return (*this);
+}
+
 void ScavTrap::guardGate()
 {
 	if (this->GetHp() <= 0)

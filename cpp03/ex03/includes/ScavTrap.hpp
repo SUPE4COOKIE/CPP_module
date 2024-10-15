@@ -2,7 +2,7 @@
 # define SCAVTRAP_HPP
 # include <iostream>
 # include "ClapTrap.hpp"
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 private:
 	bool _is_guarding;
@@ -13,6 +13,7 @@ public:
 	~ScavTrap();
 	ScavTrap &operator=(const ScavTrap &);
 	void guardGate();
+	void highFivesGuys(void);
 	void attack(const std::string& target);
 };
 

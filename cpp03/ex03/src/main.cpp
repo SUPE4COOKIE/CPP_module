@@ -1,23 +1,23 @@
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
-	ClapTrap clap("clap");
-	FragTrap Frag("Frag");
-	FragTrap copy(Frag);
+	DiamondTrap dt("DiamondTrap");
+	DiamondTrap dt2(dt);
+	DiamondTrap dt3;
 
-	Frag.attack("copy");
-	copy.takeDamage(5);
-	std::cout << "copy hp: " << copy.GetHp() << std::endl;
-	copy.beRepaired(5);
-	copy.takeDamage(5);
-	std::cout << "copy hp: " << copy.GetHp() << std::endl;
-	for (int i = 0; i < 11; i++)
-	{
-		Frag.attack("copy");
-		copy.takeDamage(Frag.GetAtk());
-	}
-	Frag.highFivesGuys();
-	copy.highFivesGuys();
+	dt.attack("target");
+	std::cout << "HP: " << dt.GetHp() << std::endl;
+	dt.takeDamage(10);
+	std::cout << "HP: " << dt.GetHp() << std::endl;
+	dt.beRepaired(10);
+	std::cout << "HP: " << dt.GetHp() << std::endl;
+	dt.guardGate();
+	dt.highFivesGuys();
+	dt.whoAmI();
+	dt2.whoAmI();
+	dt3.whoAmI();
+	return (0);
 }

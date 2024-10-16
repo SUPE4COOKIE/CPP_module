@@ -1,11 +1,11 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap() 
+ScavTrap::ScavTrap() : ClapTrap(), _is_guarding(false)
 {
 	std::cout << "ScavTrap " << BLUE << this->GetName() << RESET << " has been created!" << std::endl;
 };
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name), _is_guarding(false)
 {
 	std::cout << "ScavTrap " << BLUE << this->GetName() << RESET << " has been created!" << std::endl;
 };

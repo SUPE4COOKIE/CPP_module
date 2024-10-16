@@ -50,6 +50,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		std::cout << BLUE << this->_name << RESET << " is already dead!" << std::endl;
 		return ;
 	}
+	this->_hp -= amount;
 	std::cout << BLUE << this->_name << RESET 
 			  << " takes " << RED << amount << RESET 
 			  << " points of damage!" << "(" << this->_hp
@@ -60,13 +61,12 @@ void ClapTrap::takeDamage(unsigned int amount)
 		std::cout << BLUE << this->_name << RESET << " died!" << std::endl;
 		return ;
 	}
-	this->_hp -= amount;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	this->_hp += amount;
 	std::cout << BLUE << this->_name << RESET << " is repaired of " 
 			  << GREEN << amount << " HP " << RESET << "(" 
 			  << this->_hp << " HP remaining" << ")"<< std::endl;
-	this->_hp += amount;
 }

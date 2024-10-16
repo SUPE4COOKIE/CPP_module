@@ -7,6 +7,7 @@ int main(void)
 	FragTrap Frag("Frag");
 	FragTrap copy(Frag);
 
+	std::cout << "copy hp: " << copy.GetHp() << std::endl;
 	Frag.attack("copy");
 	copy.takeDamage(5);
 	std::cout << "copy hp: " << copy.GetHp() << std::endl;

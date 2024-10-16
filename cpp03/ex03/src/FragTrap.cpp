@@ -10,7 +10,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	std::cout << "FragTrap " << BLUE << this->GetName() << RESET << " has been created!" << std::endl;
 };
 
-FragTrap::FragTrap(const FragTrap &ref)
+FragTrap::FragTrap(const FragTrap &ref) : ClapTrap(ref.GetName())
 {
 	*this = ref;
 	std::cout << "FragTrap " << BLUE << this->GetName() << RESET << " has been copied!" << std::endl;

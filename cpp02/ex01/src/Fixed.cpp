@@ -19,7 +19,6 @@ Fixed &Fixed::operator=(const Fixed &fixed)
 }
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 {
-	
 	os << fixed.toFloat();
 	return os;
 }

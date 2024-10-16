@@ -15,6 +15,7 @@ public:
 	~DiamondTrap();
 	void whoAmI();
 	using ScavTrap::attack;
+	using FragTrap::highFivesGuys;
 };
 
 #endif

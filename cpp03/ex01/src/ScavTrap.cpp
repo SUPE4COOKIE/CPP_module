@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap() 
+ScavTrap::ScavTrap() : ClapTrap(), _is_guarding(false)
 {
 	this->SetHp(100);
 	this->SetEp(50);
@@ -8,7 +8,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 	std::cout << "ScavTrap " << BLUE << this->GetName() << RESET << " has been created!" << std::endl;
 };
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name), _is_guarding(false)
 {
 	this->SetHp(100);
 	this->SetEp(50);
@@ -16,7 +16,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	std::cout << "ScavTrap " << BLUE << this->GetName() << RESET << " has been created!" << std::endl;
 };
 
-ScavTrap::ScavTrap(const ScavTrap &ref)
+ScavTrap::ScavTrap(const ScavTrap &ref) : ClapTrap(ref.GetName())
 {
 	*this = ref;
 	std::cout << "ScavTrap " << BLUE << this->GetName() << RESET << " has been copied!" << std::endl;

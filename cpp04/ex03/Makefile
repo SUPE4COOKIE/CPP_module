@@ -4,12 +4,6 @@ OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJDIR)/%.o)
 DEPS = $(OBJS:.o=.d)
 SRCS = $(addprefix $(SRC_DIR)/, \
 	main.cpp \
-	Animal.cpp \
-	Dog.cpp \
-	Cat.cpp \
-	WrongAnimal.cpp \
-	WrongCat.cpp \
-	Brain.cpp \
 )
 NAME = AbstrctAnimal
 CXX = c++

@@ -15,14 +15,13 @@ class Animal
 {
 protected:
 	std::string _type;
-public:
-	Animal();
 	Animal(std::string type);
+	Animal();
 	Animal(const Animal &);
+public:
 	Animal &operator=(const Animal &);
 	virtual ~Animal();
-
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0;
 	virtual std::string getType() const;
 };
 #endif

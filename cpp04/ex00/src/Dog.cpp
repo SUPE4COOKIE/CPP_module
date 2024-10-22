@@ -1,7 +1,7 @@
 #include "Dog.hpp"
 
 Dog::Dog() : Animal("Dog") {std::cout << "Dog Default constructor called for " << GREEN << _type << RESET << std::endl;}
-Dog::Dog(const Dog &ref) 
+Dog::Dog(const Dog &ref) : Animal("Dog")
 {
 	*this = ref;
 	std::cout << "Dog Copy constructor called for " << YELLOW << _type << RESET << std::endl;

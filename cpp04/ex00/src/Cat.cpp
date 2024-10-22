@@ -1,7 +1,7 @@
 #include "Cat.hpp"
 
 Cat::Cat() : Animal("Cat") {std::cout << "Cat Default constructor called for " << GREEN << _type << RESET << std::endl;}
-Cat::Cat(const Cat &ref) 
+Cat::Cat(const Cat &ref) : Animal("Cat")
 {
 	*this = ref;
 	std::cout << "Cat Copy constructor called for " << YELLOW << _type << RESET << std::endl;

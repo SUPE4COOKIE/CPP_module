@@ -8,8 +8,9 @@ class Character : public ICharacter
 private:
 	std::string _name;
 	AMateria *_materias[4];
-	AMateria *_materias[];
+	
 public:
+	Character();
 	Character(std::string name);
 	Character(const Character &);
 	Character &operator=(const Character &);

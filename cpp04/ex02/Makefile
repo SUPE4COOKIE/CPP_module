@@ -11,7 +11,7 @@ SRCS = $(addprefix $(SRC_DIR)/, \
 	WrongCat.cpp \
 	Brain.cpp \
 )
-NAME = AbstrctAnimal
+NAME = AbstractAnimal
 CXX = c++
 CXX_FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 INC = -I includes/

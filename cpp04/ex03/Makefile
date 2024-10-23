@@ -4,6 +4,11 @@ OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJDIR)/%.o)
 DEPS = $(OBJS:.o=.d)
 SRCS = $(addprefix $(SRC_DIR)/, \
 	main.cpp \
+	AMateria.cpp \
+	Character.cpp \
+	Cure.cpp \
+	Ice.cpp \
+	MateriaSource.cpp \
 )
 NAME = AbstrctAnimal
 CXX = c++

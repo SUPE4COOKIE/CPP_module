@@ -1,12 +1,7 @@
 #include "DynamicArr.hpp"
 
-DynamicArr::DynamicArr() : _materias(new AMateria*[2]), _size(0), _capacity(0) {}
-DynamicArr::~DynamicArr()
-{
-	for (size_t i = 0; i < this->_size; i++)
-		delete this->_materias[i];
-	delete[] this->_materias;
-}
+DynamicArr::DynamicArr() : _materias(new AMateria*[2]), _size(0), _capacity(2) {}
+DynamicArr::~DynamicArr() {delete[] this->_materias;}
 void DynamicArr::resize()
 {
 	AMateria **tmp = new AMateria*[this->_capacity * 2];
@@ -39,3 +34,5 @@ const AMateria *DynamicArr::operator[](size_t idx) const
 		return NULL;
 	return this->_materias[idx];
 }
+
+size_t DynamicArr::getSize() const { return this->_size; }

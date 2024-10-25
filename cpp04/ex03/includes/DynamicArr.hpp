@@ -14,6 +14,7 @@ public:
 	const DynamicArr &operator=(const DynamicArr &ref);
 	const AMateria *operator[](size_t idx) const;
 	void add(AMateria *m);
+	size_t getSize() const;
 };
 
 #endif

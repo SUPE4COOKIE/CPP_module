@@ -1,7 +1,11 @@
 #include "MateriaSource.hpp"
 #include "AMateria.hpp"
 
-MateriaSource::MateriaSource() {};
+MateriaSource::MateriaSource()
+{
+	for (int i = 0; i < 4; i++)
+		this->_materias[i] = NULL;
+};
 MateriaSource::MateriaSource(const MateriaSource &ref)
 {*this = ref;}
 MateriaSource &MateriaSource::operator=(const MateriaSource &ref)
@@ -12,7 +16,14 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &ref)
 	this->_materias[3] = ref._materias[3];
 	return *this;
 }
-MateriaSource::~MateriaSource() {};
+MateriaSource::~MateriaSource()
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_materias[i] != NULL)
+			delete this->_materias[i];
+	}
+};
 void MateriaSource::learnMateria(AMateria *materia)
 {
 	for (int i = 0; i < 4; i++)

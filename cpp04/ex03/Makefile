@@ -9,8 +9,9 @@ SRCS = $(addprefix $(SRC_DIR)/, \
 	Cure.cpp \
 	Ice.cpp \
 	MateriaSource.cpp \
+	DynamicArr.cpp \
 )
-NAME = AbstrctAnimal
+NAME = InterfaceRecap
 CXX = c++
 CXX_FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 INC = -I includes/

@@ -2,12 +2,14 @@
 # define CHARACTER_HPP
 # include <iostream>
 # include "ICharacter.hpp"
-
+#include "AMateria.hpp"
+# include "DynamicArr.hpp"
 class Character : public ICharacter
 {
 private:
 	std::string _name;
 	AMateria *_materias[4];
+	DynamicArr _groundItems;
 	
 public:
 	Character();
@@ -20,6 +22,5 @@ public:
 	void equip(AMateria* m);
 	void unequip(int idx);
 	void use(int idx, ICharacter& target);
-
 };
 #endif

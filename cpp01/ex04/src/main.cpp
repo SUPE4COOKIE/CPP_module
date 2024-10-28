@@ -17,29 +17,25 @@ int check_error(int ac, std::string infile_name)
 	return 0;
 }
 
-std::string replace_line(std::string line, std::string s1, std::string s2)
-{
-	size_t start;
-	size_t end = 0;
-	std::string replaced_line;
-
-	while ((start = line.find(s1, end)) != std::string::npos)
+void replaceSubstring(std::string &str, const std::string &s1, const std::string &s2) {
+	size_t pos = str.find(s1);
+	while (pos != std::string::npos)
 	{
-		replaced_line += line.substr(end, start - end) + s2;
-		end = start + s1.length();
+		str.erase(pos, s1.length());
+		str.insert(pos, s2);
+		pos = str.find(s1, pos + s2.length());
 	}
-	replaced_line += line.substr(end);
-	return replaced_line;
 }
 
 void file_rewrite(std::ifstream& infile, std::ofstream& outfile, std::string s1, std::string s2)
 {
 	std::string line;
+	std::string file_content;
 
 	while (std::getline(infile, line))
-	{
-		outfile << replace_line(line, s1, s2) << "\n";
-	}
+		file_content += line + "\n";
+	replaceSubstring(file_content, s1, s2);
+	outfile << file_content;
 }
 
 int main(int ac, char **av)

@@ -17,8 +17,6 @@ void Harl::complain(std::string level)
 	}
 }
 
-//cahnge Makefile
-
 Harl::Harl()
 {
 }

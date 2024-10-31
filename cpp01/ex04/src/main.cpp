@@ -17,6 +17,21 @@ int check_error(int ac, std::string infile_name)
 	return 0;
 }
 
+int check_arguments(int ac, char **av)
+{
+	if (ac != 4)
+	{
+		std::cerr << "wrong number of arguments" << std::endl;
+		return 1;
+	}
+	if (av[2][0] == '\0')
+	{
+		std::cerr << "string to replace cannot be empty" << std::endl;
+		return 1;
+	}
+	return 0;
+}
+
 void replaceSubstring(std::string &str, const std::string &s1, const std::string &s2) {
 	size_t pos = str.find(s1);
 	while (pos != std::string::npos)
@@ -40,6 +55,8 @@ void file_rewrite(std::ifstream& infile, std::ofstream& outfile, std::string s1,
 
 int main(int ac, char **av)
 {
+	if (check_arguments(ac, av))
+		return 1;
 	std::string infile_name = av[1];
 
 	if (check_error(ac, infile_name))

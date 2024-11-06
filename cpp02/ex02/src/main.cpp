@@ -13,5 +13,11 @@ int main( void ) {
 
 	Fixed c(8388608);
 	std::cout << c << std::endl;
+	c.setRawBits(roundf(2.5 * 256));
+	std::cout << c << std::endl;
+	Fixed d(2);
+	std::cout << c / d << std::endl;
+	std::cout << c - d << std::endl;
+	std::cout << (c >= d) << std::endl;
 	return 0;
 }

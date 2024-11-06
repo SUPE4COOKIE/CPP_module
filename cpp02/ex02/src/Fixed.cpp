@@ -1,8 +1,16 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(const int number) : fixed_point_value(number * (1 << fractional_bits)) {}
+Fixed::Fixed(const int number) : fixed_point_value(number * (1 << fractional_bits))
+{
+	if (number > 2147483647 / (1 << fractional_bits) || number < -2147483648 / (1 << fractional_bits))
+		std::cerr << "Error: Overflow/Underflow detected" << std::endl;
+}
 Fixed::Fixed() : fixed_point_value(0) {}
-Fixed::Fixed(const float number) : fixed_point_value(roundf(number * (1 << fractional_bits))) {}
+Fixed::Fixed(const float number) : fixed_point_value(roundf(number * (1 << fractional_bits)))
+{
+	if (number > 2147483647.0f / (1 << fractional_bits) || number < -2147483648.0f / (1 << fractional_bits))
+		std::cerr << "Error: Overflow/Underflow detected" << std::endl;
+}
 Fixed::Fixed(const Fixed &fixed)
 {
 	*this = fixed;

@@ -4,9 +4,9 @@ OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJDIR)/%.o)
 DEPS = $(OBJS:.o=.d)
 SRCS = $(addprefix $(SRC_DIR)/, \
 	main.cpp \
-	Fixed.cpp \
+	Bureaucrat.cpp \
 )
-NAME = Fixed
+NAME = Bureaucrat
 CXX = c++
 CXX_FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 INC = -I includes/

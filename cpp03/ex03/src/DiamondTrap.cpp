@@ -1,6 +1,6 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap(), _name("No name")
+DiamondTrap::DiamondTrap() : ClapTrap("No name_clap_name"), ScavTrap("No name_clap_name"), FragTrap("No name_clap_name"), _name("No name")
 {
 	std::cout << "DiamondTrap " << BLUE << this->GetName() << RESET << " has been created!" << std::endl;
 	this->SetHp(this->FragTrap::GetHp());
@@ -16,7 +16,17 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Scav
 	this->SetAtk(this->FragTrap::GetAtk());
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &ref) : ClapTrap(ref.GetName()), ScavTrap(ref._name), FragTrap(ref._name)
+std::string DiamondTrap::GetName() const
+{
+	return (this->DiamondTrap::_name);
+}
+
+void DiamondTrap::SetName(std::string name)
+{
+	this->DiamondTrap::_name = name;
+}
+
+DiamondTrap::DiamondTrap(const DiamondTrap &ref) : ClapTrap(ref.GetName() + "_clap_name"), ScavTrap(ref.GetName()), FragTrap(ref.GetName())
 {
 	*this = ref;
 	std::cout << "DiamondTrap " << BLUE << this->GetName() << RESET << " has been copied!" << std::endl;
@@ -24,8 +34,8 @@ DiamondTrap::DiamondTrap(const DiamondTrap &ref) : ClapTrap(ref.GetName()), Scav
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &ref)
 {
-	this->_name = ref._name;
-	this->ClapTrap::SetName(ref.GetName());
+	this->DiamondTrap::SetName(ref.GetName());
+	this->ClapTrap::SetName(ref.GetName() + "_clap_name");
 	this->SetHp(ref.GetHp());
 	this->SetEp(ref.GetEp());
 	this->SetAtk(ref.GetAtk());

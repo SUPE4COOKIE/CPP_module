@@ -10,6 +10,7 @@ int main(void)
 	copy.takeDamage(5);
 	std::cout << "copy hp: " << copy.GetHp() << std::endl;
 	std::cout << "clap hp: " << clap.GetHp() << std::endl;
+	copy.takeDamage(5);
 	copy.beRepaired(5);
 	std::cout << "copy hp: " << copy.GetHp() << std::endl;
 	for (int i = 0; i < 10; i++)

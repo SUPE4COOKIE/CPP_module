@@ -8,11 +8,11 @@ int main(void)
 	ScavTrap copy(scav);
 
 	scav.attack("copy");
-	copy.takeDamage(5);
+	copy.takeDamage(20);
 	std::cout << "copy hp: " << copy.GetHp() << std::endl;
 	std::cout << "clap hp: " << clap.GetHp() << std::endl;
 	copy.beRepaired(5);
-	copy.takeDamage(5);
+	copy.takeDamage(20);
 	std::cout << "copy hp: " << copy.GetHp() << std::endl;
 	for (int i = 0; i < 11; i++)
 	{

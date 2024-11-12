@@ -14,8 +14,11 @@ public:
 	DiamondTrap &operator=(const DiamondTrap &);
 	~DiamondTrap();
 	void whoAmI();
+	std::string GetName() const;
+	void SetName(std::string name);
 	using ScavTrap::attack;
 	using FragTrap::highFivesGuys;
+	using ScavTrap::guardGate;
 };
 
 #endif

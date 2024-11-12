@@ -1,17 +1,20 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 #include <iostream>
+#include <stdexcept>
 
 class Bureaucrat
 {
 private:
 	std::string _name;
 	unsigned int _grade;
-	std::string _gradeTooHighException;
-	std::string _gradeTooLowException;
+	static std::runtime_error _gradeTooHighException;
+	static std::runtime_error _gradeTooLowException;
 public:
 	Bureaucrat();
 	Bureaucrat(std::string name, unsigned int grade);
+	Bureaucrat(Bureaucrat const &bureaucrat);
+	Bureaucrat &operator=(Bureaucrat const &bureaucrat);
 	~Bureaucrat();
 
 	std::string getName() const;

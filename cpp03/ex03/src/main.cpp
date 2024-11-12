@@ -15,6 +15,7 @@ int main(void)
 	dt.beRepaired(10);
 	std::cout << "HP: " << dt.GetHp() << std::endl;
 	dt.guardGate();
+	dt.guardGate();
 	dt.highFivesGuys();
 	dt.whoAmI();
 	dt2.whoAmI();

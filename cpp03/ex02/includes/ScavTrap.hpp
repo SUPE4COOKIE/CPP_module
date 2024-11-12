@@ -13,7 +13,6 @@ public:
 	~ScavTrap();
 	ScavTrap &operator=(const ScavTrap &);
 	void guardGate();
-	void highFivesGuys(void);
 	void attack(const std::string& target);
 };
 

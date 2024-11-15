@@ -18,7 +18,10 @@ Character &Character::operator=(const Character &ref)
 {
 	this->_name = ref._name;
 	for (int i = 0; i < 4; i++)
-		this->_materias[i] = ref._materias[i];
+		if (this->_materias[i] != NULL)
+			delete this->_materias[i];
+	for (int i = 0; i < 4; i++)
+		this->_materias[i] = ref._materias[i]->clone();
 	return *this;
 }
 

@@ -2,13 +2,13 @@
 #define FORM_HPP
 #include <iostream>
 #include <stdexcept>
-#include "Bureaucrat.hpp"
 
+class Bureaucrat;
 class Form
 {
 private:
 	const std::string _name;
-	bool _is_signed = false;
+	bool _is_signed;
 	const unsigned int _sign_grade;
 	const unsigned int _exec_grade;
 	static std::runtime_error _gradeTooHighException;

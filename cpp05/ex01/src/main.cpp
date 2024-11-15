@@ -5,43 +5,14 @@ int main(void)
 	Bureaucrat John("John", 150);
 	std::cout << John;
 	Bureaucrat Bob("Bob", 1);
-	std::cout << Bob;
-	try
-	{
-		Bureaucrat Michel("Michel", 175);
-	}
-	catch (std::exception & e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
-	try
-	{
-		Bureaucrat Joe("Joe", 0);
-	}
-	catch (std::exception & e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
-	try
-	{
-		Bureaucrat Sam("Sam", 150);
-		Sam.decrementGrade(1);
-	}
-	catch (std::exception & e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
-	try
-	{
-		Bureaucrat Mike("Mike", 1);
-		Mike.incrementGrade(1);
-	}
-	catch (std::exception & e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	std::cout << Bob << std::endl;
+	Form useless_form("Useless Form", 150, 150);
+	std::cout << useless_form << std::endl;
+	Form important_form("Important Form", 1, 1);
+	std::cout << important_form << std::endl;
+	John.signForm(important_form);
+	std::cout << std::endl << important_form << std::endl;
+	Bob.signForm(important_form);
+	std::cout << std::endl << important_form << std::endl;
 	return 0;
 }

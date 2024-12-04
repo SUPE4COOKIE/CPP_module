@@ -22,7 +22,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	if (!this->getSignedStatus())
 		throw AForm::getFormNotSignedException();
 	std::cout << "*drilling noises*" << std::endl;
-	if (rand() % 2)
+	if (std::rand() % 2)
 		std::cout << this->_target << " has been robotomized successfully" << std::endl;
 	else
 		std::cout << this->_target << " robotomy has failed" << std::endl;

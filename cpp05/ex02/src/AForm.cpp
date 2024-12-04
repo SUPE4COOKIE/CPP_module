@@ -25,6 +25,12 @@ void AForm::beSigned(Bureaucrat &bureaucrat)
 	this->_is_signed = true;
 }
 
+AForm &AForm::operator=(AForm const &form) 
+{
+	this->_is_signed = form.getSignedStatus();
+	return *this;
+}
+
 const std::string AForm::getName() const { return _name; }
 bool AForm::getSignedStatus() const { return _is_signed; }
 unsigned int AForm::getSignGrade() const { return _sign_grade; }

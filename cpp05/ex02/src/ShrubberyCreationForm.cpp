@@ -21,7 +21,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		throw AForm::getGradeTooLowException();
 	if (!this->getSignedStatus())
 		throw AForm::getFormNotSignedException();
-	std::ofstream file(this->_target + "_shrubbery");
+	std::ofstream file((this->_target + "_shrubbery").c_str());
 	if (!file.is_open())
 		throw std::runtime_error("File could not be opened");
 	file << "               ,@@@@@@@," << std::endl;

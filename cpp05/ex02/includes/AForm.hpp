@@ -18,7 +18,7 @@ public:
 	AForm();
 	AForm(std::string name, unsigned int sign_grade, unsigned int exec_grade);
 	AForm(AForm const &form);
-	virtual AForm &operator=(AForm const &form) = 0;
+	AForm &operator=(AForm const &form);
 	virtual ~AForm();
 
 	const std::string getName() const;

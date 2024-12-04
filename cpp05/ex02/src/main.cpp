@@ -13,6 +13,7 @@ int main()
 	RobotomyRequestForm r1("salut");
 	PresidentialPardonForm p1("coucou");
 
+	std::cout << s1 << std::endl;
 	b1.executeForm(s1);
 	b1.signForm(s1);
 	b2.executeForm(s1);

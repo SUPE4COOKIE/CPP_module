@@ -6,7 +6,7 @@ SRCS = $(addprefix $(SRC_DIR)/, \
 	main.cpp \
 	ScalarConverter.cpp \
 )
-NAME = ScalarConverter
+NAME = convert
 CXX = c++
 CXX_FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 INC = -I includes/

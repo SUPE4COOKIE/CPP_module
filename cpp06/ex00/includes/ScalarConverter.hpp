@@ -3,7 +3,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <cerrno>
+#include <limits>
 #include <climits>
+#include <iomanip>
 
 class ScalarConverter
 {
@@ -19,7 +21,8 @@ public:
 char convertChar(double num);
 int convertInt(double num);
 float convertFloat(double num);
-double convertDouble(double num);
 void cantConvert();
 void printConversion(double num);
+bool isNan(double num);
+bool isInf(double num);
 #endif

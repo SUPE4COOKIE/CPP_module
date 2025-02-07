@@ -2,10 +2,10 @@
 
 std::runtime_error Span::_SpanException = std::runtime_error("Span exception");
 
-Span::Span() : _data() {}
+Span::Span() : _data(), _capacity(0) {}
 Span::Span(size_t size) : _capacity(size) {}
-Span::Span(Span const &ref) : _data(ref._data) {}
-Span &Span::operator=(Span const &ref) { this->_data = ref._data; return *this; }
+Span::Span(Span const &ref) : _data(ref._data), _capacity(ref._capacity) {}
+Span &Span::operator=(Span const &ref) { this->_data = ref._data; this->_capacity = ref._capacity; return *this; }
 std::size_t Span::getSize() const { return this->_data.size(); }
 Span::~Span() {}
 
@@ -14,6 +14,13 @@ void Span::addNumber(std::size_t nbr)
 	if (this->_data.size() + 1 > this->_capacity)
 		throw this->_SpanException;
 	this->_data.push_back(nbr);
+}
+
+void Span::addNumber(std::vector<size_t>::iterator begin, std::vector<size_t>::iterator end)
+{
+	if (this->_data.size() + std::distance(begin, end) > this->_capacity)
+		throw this->_SpanException;
+	this->_data.insert(this->_data.end(), begin, end);
 }
 
 std::size_t Span::shortestSpan()

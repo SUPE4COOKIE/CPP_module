@@ -3,6 +3,7 @@
 # include <iostream>
 # include <vector>
 # include <stdexcept>
+# include <cstdlib>
 
 # define ABS(x) ((x) < 0 ? -(x) : (x))
 
@@ -20,6 +21,7 @@ public:
 	~Span();
 
 	void addNumber(std::size_t nbr);
+	void addNumber(std::vector<size_t>::iterator begin, std::vector<size_t>::iterator end);
 	
 	size_t shortestSpan();
 	size_t longestSpan();

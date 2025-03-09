@@ -4,6 +4,7 @@ OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJDIR)/%.o)
 DEPS = $(OBJS:.o=.d)
 SRCS = $(addprefix $(SRC_DIR)/, \
 	main.cpp \
+	Database.cpp \
 )
 NAME = btc
 CXX = c++

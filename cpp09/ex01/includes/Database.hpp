@@ -7,21 +7,17 @@
 class Database
 {
 private:
-	
+	std::map<time_t, double> data;
+
+	time_t dateToTimestamp(const std::string date);
+
 public:
-	time_t oldest_value;
-	time_t newest_value;
 	Database();
 	~Database();
-	std::map<time_t, double> data;
+	
+	void addPrice(const std::string &date, const double &price);
+	double getPrice(const std::string &date);
+	void printData();
 };
-
-Database::Database()
-{
-}
-
-Database::~Database()
-{
-}
 
 #endif
